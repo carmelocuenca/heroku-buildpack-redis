@@ -1,3 +1,5 @@
+Un fork de un builpacks para ffmpeg con la única diferencia que el fichero bin/compile contiene una dirección URL diferente para descarga del software ya compilado para Ubuntu 14.04.
+
 Heroku buildpack: FFMpeg
 =======================
 
