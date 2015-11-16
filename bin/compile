@@ -5,10 +5,16 @@ indent() {
 }
 
 echo "-----> Install ffmpeg"
+
+sudo apt-get -y --force-yes install autoconf automake build-essential libass-dev libfreetype6-dev \
+      libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev \
+      libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev
+
+
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
 # DOWNLOAD_URL="http://flect.github.io/heroku-binaries/libs/ffmpeg.tar.gz"
-DOWNLOAD_URL="https://github.com/carmelocuenca/ffmpeg/raw/master/ffmpeg.tar.gz"
+# DOWNLOAD_URL="https://github.com/carmelocuenca/ffmpeg/raw/master/ffmpeg.tar.gz"
 DOWNLOAD_URL="https://serdis.dis.ulpgc.es/~ccuenca/ffmpeg.tar.gz"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
