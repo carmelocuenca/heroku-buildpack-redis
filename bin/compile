@@ -6,4 +6,4 @@ indent() {
 
 echo "-----> Install redis-cli"
 
-sudo apt-get install redis-cli -y
+apt-get install redis-cli -y
