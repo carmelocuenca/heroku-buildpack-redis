@@ -4,23 +4,6 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Install ffmpeg"
+echo "-----> Install redis-cli"
 
-BUILD_DIR=$1
-VENDOR_DIR="vendor"
-# DOWNLOAD_URL="http://flect.github.io/heroku-binaries/libs/ffmpeg.tar.gz"
-# DOWNLOAD_URL="https://github.com/carmelocuenca/ffmpeg/raw/master/ffmpeg.tar.gz"
-DOWNLOAD_URL="https://serdis.dis.ulpgc.es/~ccuenca/ffmpeg.tar.gz"
-
-echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
-
-cd $BUILD_DIR
-mkdir -p $VENDOR_DIR
-cd $VENDOR_DIR
-curl -Lk --silent $DOWNLOAD_URL | tar xz
-
-echo "exporting PATH and LIBRARY_PATH" | indent
-PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
-mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/ffmpeg/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ffmpeg/lib"' >> $PROFILE_PATH
+sudo apt-get install redis-cli -y
